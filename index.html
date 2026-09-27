@@ -81,6 +81,14 @@
           },
           {
             "@type": "Question",
+            "name": "How can I install Brevier today?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Brevier is in review on the Chrome Web Store. Until it is approved, you can install the developer preview: download the zip, extract it, and load it from chrome://extensions in Developer mode. Preview builds do not update automatically, and Pro purchases become available only after the store release."
+            }
+          },
+          {
+            "@type": "Question",
             "name": "Does Brevier work offline?",
             "acceptedAnswer": {
               "@type": "Answer",
@@ -124,7 +132,15 @@
             "name": "How do I buy Pro?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "In the Brevier popup: $9.99 per year or a $19.99 one-time purchase — both unlock everything. Checkout is handled by ExtensionPay; your license is stored in your browser."
+              "text": "In the Brevier popup: $9.99 per year or a $19.99 one-time purchase — both unlock everything. Checkout is handled by ExtensionPay and opens when Brevier is approved on the Chrome Web Store; your license is stored in your browser."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How can I support Brevier's development?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Buying Pro is the main way — every purchase, yearly or one-time, directly funds development of the on-device engines and keeps Brevier independent. Reporting bugs and sharing Brevier with someone who needs captions helps just as much."
             }
           }
         ]
@@ -134,6 +150,16 @@
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
+
+    <div class="banner" data-preview-only>
+      <div class="container banner-inner">
+        <span>
+          <strong>Brevier is in review on the Chrome Web Store.</strong> Meanwhile, the developer
+          preview is ready to install.
+        </span>
+        <a href="install-dev.html">Install the preview →</a>
+      </div>
+    </div>
 
     <header class="site-header">
       <div class="container header-inner">
@@ -148,7 +174,7 @@
           <a href="#faq">FAQ</a>
           <a href="support.html">Support</a>
         </nav>
-        <a class="btn btn-primary header-cta" href="https://github.com/KonstBet/brevier-site" data-store-link>Add to Chrome</a>
+        <a class="btn btn-primary header-cta" href="install-dev.html" data-store-link>Add to Chrome</a>
       </div>
     </header>
 
@@ -164,7 +190,7 @@
               sent to a server.
             </p>
             <div class="cta-row">
-              <a class="btn btn-primary btn-lg" href="https://github.com/KonstBet/brevier-site" data-store-link>Add to Chrome</a>
+              <a class="btn btn-primary btn-lg" href="install-dev.html" data-store-link>Add to Chrome</a>
               <a class="btn btn-secondary btn-lg" href="#how-it-works">See how it works</a>
             </div>
             <p class="cta-note">Free forever for English · No account required · Desktop Chrome 116+</p>
@@ -194,7 +220,10 @@
           <ol class="steps">
             <li>
               <h3>Install Brevier</h3>
-              <p>Add the extension from the Chrome Web Store. Nothing else to configure.</p>
+              <p>
+                Add the extension from the Chrome Web Store — or install the
+                <a href="install-dev.html">developer preview</a> while the store review is pending.
+              </p>
             </li>
             <li>
               <h3>Press Start</h3>
@@ -362,7 +391,7 @@
           <h2>Free or Pro</h2>
           <p class="section-lead">
             Everything runs on your device either way. Pro unlocks the rest of the language table and the
-            higher-quality on-device translator.
+            higher-quality on-device translator — and every Pro purchase funds Brevier's development.
           </p>
           <div class="pricing">
             <article class="price-card">
@@ -375,7 +404,7 @@
                 <li>Every caption appearance setting</li>
                 <li>15 free Pro minutes every day, resetting at midnight</li>
               </ul>
-              <a class="btn btn-secondary" href="https://github.com/KonstBet/brevier-site" data-store-link>Add to Chrome</a>
+              <a class="btn btn-secondary" href="install-dev.html" data-store-link>Add to Chrome</a>
             </article>
             <article class="price-card featured">
               <h3>Pro</h3>
@@ -386,7 +415,11 @@
                 <li>The other 98 transcription languages</li>
                 <li>Hunyuan-MT on-device translation, where its license applies</li>
               </ul>
-              <a class="btn btn-primary" href="https://github.com/KonstBet/brevier-site" data-store-link>Get Pro</a>
+              <a class="btn btn-primary" href="install-dev.html#pro" data-store-pro>Get Pro</a>
+              <p class="price-note price-support">
+                Buying Pro supports Brevier's development — it funds the on-device engines and keeps
+                the project independent.
+              </p>
             </article>
           </div>
           <p class="section-footnote">Prices in USD. Checkout is handled by ExtensionPay; your Pro license unlocks in the browser.</p>
@@ -424,6 +457,16 @@
               Desktop Chrome 116 or newer. Chrome's built-in translator (for caption translation) needs Chrome
               138 or newer. A GPU with WebGPU is recommended for Parakeet and Whisper; Moonshine runs on CPU-only
               machines.
+            </p>
+          </details>
+
+          <details>
+            <summary>How can I install Brevier today?</summary>
+            <p>
+              Brevier is in review on the Chrome Web Store. Until it is approved, you can install the
+              <a href="install-dev.html">developer preview</a>: download the zip, extract it, and load it from
+              chrome://extensions in Developer mode. Preview builds do not update automatically, and Pro
+              purchases become available only after the store release.
             </p>
           </details>
 
@@ -471,7 +514,17 @@
             <summary>How do I buy Pro?</summary>
             <p>
               In the Brevier popup: $9.99 per year or a $19.99 one-time purchase — both unlock everything.
-              Checkout is handled by ExtensionPay; your license is stored in your browser.
+              Checkout is handled by ExtensionPay and opens when Brevier is approved on the Chrome Web Store;
+              your license is stored in your browser.
+            </p>
+          </details>
+
+          <details>
+            <summary>How can I support Brevier's development?</summary>
+            <p>
+              Buying Pro is the main way — every purchase, yearly or one-time, directly funds development of the
+              on-device engines and keeps Brevier independent. Reporting bugs and sharing Brevier with someone
+              who needs captions helps just as much.
             </p>
           </details>
         </div>

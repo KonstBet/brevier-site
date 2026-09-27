@@ -199,6 +199,33 @@ ol {
   margin-left: 4px;
 }
 
+/* Review banner (hidden by site.js once the store listing is live) */
+
+.banner {
+  background: rgba(14, 165, 233, 0.1);
+  border-bottom: 1px solid rgba(14, 165, 233, 0.3);
+  font-size: 0.92rem;
+}
+
+.banner[hidden] {
+  display: none;
+}
+
+.banner-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 4px 12px;
+  padding: 10px 0;
+  text-align: center;
+  color: var(--text-secondary);
+}
+
+.banner strong {
+  color: var(--accent-hover);
+}
+
 /* Buttons */
 
 .btn {
@@ -558,6 +585,10 @@ ol {
   margin-top: auto;
 }
 
+.price-support {
+  margin: 14px 0 0;
+}
+
 /* FAQ */
 
 .faq {
@@ -667,6 +698,12 @@ ol {
 
 .notice p:last-child {
   margin-bottom: 0;
+}
+
+.download-meta code {
+  color: var(--text-strong);
+  font-size: 0.85em;
+  overflow-wrap: anywhere;
 }
 
 /* Footer */

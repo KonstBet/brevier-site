@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Install the developer preview — Brevier</title>
+    <meta
+      name="description"
+      content="Install the Brevier developer preview while the extension is in review on the Chrome Web Store. For testing only: no auto-updates and no Pro checkout until launch."
+    />
+    <meta name="theme-color" content="#0b1220" />
+    <meta name="robots" content="noindex, follow" />
+    <link rel="icon" href="assets/icon48.png" type="image/png" />
+    <link rel="apple-touch-icon" href="assets/icon128.png" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="site.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="index.html">
+          <img src="assets/icon128.png" alt="" width="30" height="30" />
+          Brevier
+        </a>
+        <nav class="site-nav" aria-label="Main navigation">
+          <a href="index.html#features">Features</a>
+          <a href="index.html#engines">Engines</a>
+          <a href="index.html#pricing">Pricing</a>
+          <a href="index.html#faq">FAQ</a>
+          <a href="support.html">Support</a>
+        </nav>
+        <a class="btn btn-primary header-cta" href="downloads/brevier-preview.zip?v=0.1.0" download>Download preview</a>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class="container">
+        <div class="page-header">
+          <h1>Install the developer preview</h1>
+          <p class="section-lead">
+            Brevier is in review on the Chrome Web Store. Until it is approved, you can run the same build as a
+            developer preview by loading it in Developer mode.
+          </p>
+        </div>
+
+        <div class="prose">
+          <div class="notice">
+            <p>
+              <strong>The preview is for testing.</strong> It does not update automatically, Chrome shows a
+              developer-mode notice at startup, and Pro purchases cannot be completed until the Chrome Web Store
+              version is live. Once Brevier is approved, install it from the store instead.
+            </p>
+          </div>
+
+          <h2>Download</h2>
+          <p class="download-meta">
+            Version <span data-preview="version">0.1.0</span> · <span data-preview="size">13.1 MB</span> · updated
+            <span data-preview="date">2026-09-27</span><br />
+            SHA-256: <code data-preview="sha">c8ccd2bbcf5ab879c92bf869264bd07ab545af0036e1605126456f631fc4fe07</code>
+          </p>
+          <div class="cta-row">
+            <a class="btn btn-primary btn-lg" href="downloads/brevier-preview.zip?v=0.1.0" download>Download for Chrome</a>
+          </div>
+
+          <h2>Install in Developer mode</h2>
+          <ol>
+            <li>Download the zip above and extract it to a folder (for example <code>Downloads\brevier</code>).</li>
+            <li>Open <code>chrome://extensions</code> in Chrome.</li>
+            <li>Turn on <strong>Developer mode</strong> in the top-right corner.</li>
+            <li>
+              Click <strong>Load unpacked</strong> and select the extracted folder — the one that contains
+              <code>manifest.json</code>.
+            </li>
+            <li>
+              Pin Brevier from the puzzle-piece menu, open a tab that is playing audio, and press
+              <strong>Start</strong> in the popup.
+            </li>
+          </ol>
+          <p>
+            The first time you use an engine, Brevier downloads its model (roughly 44 MB to 1.5 GB). Keep the
+            connection up until the popup shows the model is ready; afterwards captions work offline.
+          </p>
+
+          <h2>Requirements and limits</h2>
+          <ul>
+            <li>Desktop Chrome 116 or newer (Chrome 138 or newer for built-in translation).</li>
+            <li>WebGPU is recommended for Parakeet and Whisper; Moonshine runs on CPU-only machines.</li>
+            <li>Preview installs do not auto-update — re-download the zip here for newer builds.</li>
+            <li>Chrome cannot capture chrome:// pages, the Chrome Web Store, or other extension pages.</li>
+          </ul>
+
+          <h2 id="pro">Pro and supporting development</h2>
+          <p>
+            Buying Pro is how Brevier is funded: every purchase — $9.99 per year or $19.99 once — directly
+            supports development of the on-device engines and keeps the project independent. ExtensionPay only
+            completes purchases for the published store build, so checkout is not available in the preview.
+          </p>
+          <p>
+            In the meantime the preview includes the full free tier: English captions on every engine, Chrome
+            translation, every caption appearance setting, and 15 free Pro minutes every day.
+          </p>
+          <p>
+            Not ready to buy? Reporting bugs and sharing Brevier with someone who needs captions helps just as
+            much — see <a href="support.html">Support</a>.
+          </p>
+
+          <h2>After the store release</h2>
+          <p>
+            Once Brevier is approved, install it from the Chrome Web Store: store builds update automatically and
+            support Pro checkout. If you buy Pro afterwards, sign in from the popup with the email used at
+            checkout.
+          </p>
+          <p data-store-only hidden>
+            <a class="btn btn-primary" href="https://github.com/KonstBet/brevier-site" data-store-link
+              >Get Brevier from the Chrome Web Store</a
+            >
+          </p>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a class="brand" href="index.html">
+              <img src="assets/icon128.png" alt="" width="28" height="28" />
+              Brevier
+            </a>
+            <p>Private, on-device live captions and translation for any Chrome tab.</p>
+          </div>
+          <nav aria-label="Product links">
+            <h2 class="footer-heading">Product</h2>
+            <ul>
+              <li><a href="index.html#features">Features</a></li>
+              <li><a href="index.html#engines">Engines</a></li>
+              <li><a href="index.html#pricing">Pricing</a></li>
+              <li><a href="index.html#faq">FAQ</a></li>
+            </ul>
+          </nav>
+          <nav aria-label="Help and legal links">
+            <h2 class="footer-heading">Help &amp; legal</h2>
+            <ul>
+              <li><a href="support.html">Support</a></li>
+              <li><a href="privacy.html">Privacy policy</a></li>
+              <li><a href="licenses.html">Model licenses</a></li>
+              <li>
+                <a href="https://github.com/KonstBet/brevier-site" target="_blank" rel="noopener">GitHub</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="footer-legal">
+          <p>
+            © 2026 Brevier. Chrome is a trademark of Google LLC; Brevier is not affiliated with or endorsed by
+            Google.
+          </p>
+          <p>
+            <a href="https://github.com/KonstBet/brevier-site/issues" target="_blank" rel="noopener"
+              >Report an issue</a
+            >
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
