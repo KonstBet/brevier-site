@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Privacy policy — Brevier</title>
+    <meta
+      name="description"
+      content="How Brevier handles your data: audio is processed on your device and never uploaded. No accounts, no analytics, no tracking."
+    />
+    <link rel="canonical" href="https://konstbet.github.io/brevier-site/privacy.html" />
+    <meta name="theme-color" content="#0b1220" />
+    <meta name="robots" content="index, follow" />
+    <link rel="icon" href="assets/icon48.png" type="image/png" />
+    <link rel="apple-touch-icon" href="assets/icon128.png" />
+    <link rel="stylesheet" href="styles.css" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Brevier" />
+    <meta property="og:title" content="Privacy policy — Brevier" />
+    <meta
+      property="og:description"
+      content="Audio is processed on your device and never uploaded. No accounts, no analytics, no tracking."
+    />
+    <meta property="og:url" content="https://konstbet.github.io/brevier-site/privacy.html" />
+    <script src="site.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="index.html">
+          <img src="assets/icon128.png" alt="" width="30" height="30" />
+          Brevier
+        </a>
+        <nav class="site-nav" aria-label="Main navigation">
+          <a href="index.html#features">Features</a>
+          <a href="index.html#engines">Engines</a>
+          <a href="index.html#pricing">Pricing</a>
+          <a href="index.html#faq">FAQ</a>
+          <a href="support.html">Support</a>
+        </nav>
+        <a class="btn btn-primary header-cta" href="https://github.com/KonstBet/brevier-site" data-store-link>Add to Chrome</a>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class="container">
+        <div class="page-header">
+          <h1>Privacy policy</h1>
+          <p class="meta-line">Last updated: September 28, 2026</p>
+        </div>
+
+        <div class="prose">
+          <div class="notice">
+            <p>
+              <strong>The short version:</strong> Brevier does not collect, transmit, or sell your data. Audio is
+              captured only from the tab you choose, processed on your device, and discarded. There are no
+              accounts, no analytics, and no tracking.
+            </p>
+          </div>
+
+          <h2>What Brevier processes on your device</h2>
+          <p>
+            Brevier is a Chrome extension that shows live captions for the audio of a tab you explicitly choose,
+            and can optionally translate those captions. All speech recognition and translation run locally inside
+            Chrome:
+          </p>
+          <ul>
+            <li>
+              <strong>Tab audio.</strong> When you press Start, the extension captures the audio of the selected
+              tab only, and only while captions are running. Audio is held in memory, processed by the on-device
+              speech engine, and discarded. It is never recorded to disk and never transmitted.
+            </li>
+            <li>
+              <strong>Captions and translations.</strong> Recognized text and any translation are produced on your
+              machine — with on-device models (Moonshine, Parakeet, Whisper, and optionally Hunyuan-MT) or with
+              Chrome's built-in translator — and are displayed in the caption overlay. They are never sent to a
+              server.
+            </li>
+            <li>
+              <strong>Page content.</strong> The caption overlay does not read, collect, or transmit page content.
+              It only draws the caption bar on top of the page.
+            </li>
+          </ul>
+
+          <h2>What is stored on your device</h2>
+          <p>
+            Brevier saves a small amount of data in Chrome's local extension storage
+            (<code>chrome.storage.local</code>) so the extension works the way you configured it:
+          </p>
+          <ul>
+            <li>Your settings: engine, language, translation options, and caption appearance.</li>
+            <li>The caption bar position.</li>
+            <li>The daily free Pro-minutes counter.</li>
+            <li>Your Pro license state, if you purchased Pro.</li>
+          </ul>
+          <p>
+            This data stays in your browser profile. It is never sent to Brevier's developer, and Chrome removes
+            it when you uninstall the extension.
+          </p>
+
+          <h2>Pro purchases</h2>
+          <p>
+            Pro is optional and unlocks the remaining transcription languages and Hunyuan-MT translation.
+            Checkout and license management are handled by
+            <a href="https://extensionpay.com" target="_blank" rel="noopener">ExtensionPay</a>, a third-party
+            service for browser extension payments, which uses Stripe to process payments. When you buy Pro or
+            sign in, ExtensionPay processes your purchase and stores the details needed to verify it; their
+            privacy policy and terms apply to that processing. Brevier stores only the resulting license state
+            (and the account email returned by ExtensionPay) locally in your browser, and contacts ExtensionPay's
+            service over the network only to verify a purchase or open the checkout page. Brevier never receives
+            your card details.
+          </p>
+
+          <h2>Permissions and why they are needed</h2>
+          <ul>
+            <li>
+              <strong><code>tabCapture</code></strong> — captures the audio of the tab you start captions on, so
+              the on-device speech engine has something to transcribe.
+            </li>
+            <li>
+              <strong><code>offscreen</code></strong> — Chrome's background service workers cannot hold audio or
+              run the speech engines; an offscreen document does that work locally.
+            </li>
+            <li>
+              <strong><code>storage</code></strong> — saves your settings and license state on your device.
+            </li>
+            <li>
+              <strong><code>activeTab</code></strong> — lets the popup check whether the current tab can be
+              captured and start or stop captions for it.
+            </li>
+            <li>
+              <strong>Content script on sites you visit</strong> — renders the click-through caption bar on
+              whatever site you choose to caption. It does not read or transmit page content.
+            </li>
+          </ul>
+
+          <h2>What Brevier does not do</h2>
+          <ul>
+            <li>No collection or transmission of audio, captions, translations, or browsing activity.</li>
+            <li>No user accounts or sign-ins (except the optional Pro license).</li>
+            <li>No analytics, telemetry, crash reporting, or advertising.</li>
+            <li>No selling or sharing of data with third parties.</li>
+          </ul>
+
+          <h2>Children's privacy</h2>
+          <p>Brevier is a general-purpose tool that is not directed to children under 13.</p>
+
+          <h2>Changes to this policy</h2>
+          <p>
+            If this policy changes, the new version will be posted on this page with an updated date. Material
+            changes will also be noted in the extension's release notes.
+          </p>
+
+          <h2>Contact</h2>
+          <p>
+            Questions about privacy? Open an issue at
+            <a href="https://github.com/KonstBet/brevier-site/issues" target="_blank" rel="noopener"
+              >github.com/KonstBet/brevier-site/issues</a
+            >.
+          </p>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a class="brand" href="index.html">
+              <img src="assets/icon128.png" alt="" width="28" height="28" />
+              Brevier
+            </a>
+            <p>Private, on-device live captions and translation for any Chrome tab.</p>
+          </div>
+          <nav aria-label="Product links">
+            <h2 class="footer-heading">Product</h2>
+            <ul>
+              <li><a href="index.html#features">Features</a></li>
+              <li><a href="index.html#engines">Engines</a></li>
+              <li><a href="index.html#pricing">Pricing</a></li>
+              <li><a href="index.html#faq">FAQ</a></li>
+            </ul>
+          </nav>
+          <nav aria-label="Help and legal links">
+            <h2 class="footer-heading">Help &amp; legal</h2>
+            <ul>
+              <li><a href="support.html">Support</a></li>
+              <li><a href="privacy.html">Privacy policy</a></li>
+              <li><a href="licenses.html">Model licenses</a></li>
+              <li>
+                <a href="https://github.com/KonstBet/brevier-site" target="_blank" rel="noopener">GitHub</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="footer-legal">
+          <p>
+            © 2026 Brevier. Chrome is a trademark of Google LLC; Brevier is not affiliated with or endorsed by
+            Google.
+          </p>
+          <p>
+            <a href="https://github.com/KonstBet/brevier-site/issues" target="_blank" rel="noopener">Report an issue</a>
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

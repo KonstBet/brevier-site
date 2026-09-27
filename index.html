@@ -1,0 +1,524 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Brevier — Private live captions for any tab (Chrome extension)</title>
+    <meta
+      name="description"
+      content="Brevier adds on-device live captions and translation to any Chrome tab. Your audio never leaves your machine. English captions are free; Pro adds 98 more languages."
+    />
+    <link rel="canonical" href="https://konstbet.github.io/brevier-site/" />
+    <meta name="theme-color" content="#0b1220" />
+    <meta name="robots" content="index, follow" />
+    <link rel="icon" href="assets/icon48.png" type="image/png" />
+    <link rel="apple-touch-icon" href="assets/icon128.png" />
+    <link rel="stylesheet" href="styles.css" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Brevier" />
+    <meta property="og:title" content="Brevier — Private live captions for any tab" />
+    <meta
+      property="og:description"
+      content="On-device live captions for any Chrome tab. Audio never leaves your machine. English free; Pro adds 98 more languages."
+    />
+    <meta property="og:url" content="https://konstbet.github.io/brevier-site/" />
+    <meta property="og:image" content="https://konstbet.github.io/brevier-site/assets/01-live-captions-any-tab.png" />
+    <meta property="og:image:width" content="1280" />
+    <meta property="og:image:height" content="800" />
+    <meta property="og:image:alt" content="Brevier's caption bar showing live captions over a video stream in Chrome" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Brevier — Private live captions for any tab" />
+    <meta
+      name="twitter:description"
+      content="On-device live captions for any Chrome tab. Audio never leaves your machine."
+    />
+    <meta name="twitter:image" content="https://konstbet.github.io/brevier-site/assets/01-live-captions-any-tab.png" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Brevier",
+        "url": "https://konstbet.github.io/brevier-site/",
+        "applicationCategory": "BrowserApplication",
+        "operatingSystem": "Windows, macOS, Linux, ChromeOS",
+        "description": "On-device live captions and translation for any Chrome tab. Speech recognition runs locally with WebAssembly and WebGPU; audio never leaves the machine.",
+        "screenshot": "https://konstbet.github.io/brevier-site/assets/01-live-captions-any-tab.png",
+        "softwareVersion": "0.1.0",
+        "offers": [
+          { "@type": "Offer", "name": "Free", "price": "0", "priceCurrency": "USD" },
+          { "@type": "Offer", "name": "Pro (yearly)", "price": "9.99", "priceCurrency": "USD" },
+          { "@type": "Offer", "name": "Pro (one-time)", "price": "19.99", "priceCurrency": "USD" }
+        ],
+        "featureList": [
+          "On-device live captions for any Chrome tab",
+          "Three on-device engines: Parakeet, Moonshine, and Whisper",
+          "English captions free; 99 languages with Pro",
+          "On-device caption translation with Chrome's built-in translator",
+          "Draggable, click-through caption overlay above fullscreen video"
+        ]
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Is my audio uploaded anywhere?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Audio is captured only from the tab you start captions on, processed in memory by the on-device speech engine, and discarded. Nothing is recorded or transmitted."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What do I need to run Brevier?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Desktop Chrome 116 or newer. Chrome's built-in translator (for caption translation) needs Chrome 138 or newer. A GPU with WebGPU is recommended for Parakeet and Whisper; Moonshine runs on CPU-only machines."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does Brevier work offline?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "After the first model download, yes. Models are cached locally and reused — roughly 44 MB to 1.5 GB depending on the engine and model."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Which languages are supported?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "English captions are free on every engine. Pro unlocks the other 98 transcription languages on the Moonshine and Whisper engines. Caption translation with Chrome's built-in translator is free."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does it caption fullscreen video?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. The caption bar stays above fullscreen players, and it is click-through except for its drag handle, so it never blocks buttons or links."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can it caption Chrome's own pages?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Chrome does not allow extensions to capture chrome:// pages, the Chrome Web Store, or other extension pages. Any normal website that plays audio works."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does the free tier work?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "English captions and Chrome translation are free forever, with no account. You also get 15 free Pro minutes every day, resetting at midnight, to try any language."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I buy Pro?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "In the Brevier popup: $9.99 per year or a $19.99 one-time purchase — both unlock everything. Checkout is handled by ExtensionPay; your license is stored in your browser."
+            }
+          }
+        ]
+      }
+    </script>
+    <script src="site.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="index.html">
+          <img src="assets/icon128.png" alt="" width="30" height="30" />
+          Brevier
+        </a>
+        <nav class="site-nav" aria-label="Main navigation">
+          <a href="#features">Features</a>
+          <a href="#engines">Engines</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#faq">FAQ</a>
+          <a href="support.html">Support</a>
+        </nav>
+        <a class="btn btn-primary header-cta" href="https://github.com/KonstBet/brevier-site" data-store-link>Add to Chrome</a>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero">
+        <div class="container hero-grid">
+          <div>
+            <p class="eyebrow">Chrome extension · Runs on your device</p>
+            <h1>Private live captions for any tab.</h1>
+            <p class="lead">
+              Brevier adds real-time captions to whatever you are watching or listening to — calls, streams,
+              lectures, podcasts — and runs entirely on your machine. Your audio is never uploaded, recorded, or
+              sent to a server.
+            </p>
+            <div class="cta-row">
+              <a class="btn btn-primary btn-lg" href="https://github.com/KonstBet/brevier-site" data-store-link>Add to Chrome</a>
+              <a class="btn btn-secondary btn-lg" href="#how-it-works">See how it works</a>
+            </div>
+            <p class="cta-note">Free forever for English · No account required · Desktop Chrome 116+</p>
+            <ul class="check-list">
+              <li>English captions free, forever</li>
+              <li>15 free Pro minutes every day</li>
+              <li>99 languages with Pro</li>
+              <li>Audio never leaves your machine</li>
+            </ul>
+          </div>
+          <figure class="hero-shot">
+            <img
+              src="assets/01-live-captions-any-tab.png"
+              alt="Brevier's caption bar showing live captions over a video stream in Chrome"
+              width="1280"
+              height="800"
+              fetchpriority="high"
+            />
+          </figure>
+        </div>
+      </section>
+
+      <section class="section" id="how-it-works">
+        <div class="container">
+          <h2>How it works</h2>
+          <p class="section-lead">Captions in three steps — no accounts, no setup, no uploads.</p>
+          <ol class="steps">
+            <li>
+              <h3>Install Brevier</h3>
+              <p>Add the extension from the Chrome Web Store. Nothing else to configure.</p>
+            </li>
+            <li>
+              <h3>Press Start</h3>
+              <p>Open the tab you want to caption and press Start in the Brevier popup.</p>
+            </li>
+            <li>
+              <h3>Read along</h3>
+              <p>A caption bar appears over the page. Drag it anywhere, resize the text, and read in real time.</p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="section alt" id="features">
+        <div class="container">
+          <h2>Captions, your way</h2>
+          <p class="section-lead">
+            Choose the engine and language, translate on-device, and style the caption bar to match what you are
+            watching.
+          </p>
+          <div class="feature-grid">
+            <article class="card">
+              <h3>Private by design</h3>
+              <p>
+                Audio is captured only from the chosen tab, processed in memory, and discarded. No uploads, no
+                recordings, no tracking, no account.
+              </p>
+            </article>
+            <article class="card">
+              <h3>Three on-device engines</h3>
+              <p>
+                Parakeet, Moonshine, and Whisper all run inside Chrome with WebAssembly and WebGPU. Auto picks the
+                best engine for your machine and switches if one cannot load.
+              </p>
+            </article>
+            <article class="card">
+              <h3>Works everywhere</h3>
+              <p>
+                Any site that plays audio, including fullscreen video players. The overlay is click-through except
+                for its grip, so buttons and links stay usable.
+              </p>
+            </article>
+            <article class="card">
+              <h3>On-device translation</h3>
+              <p>
+                Translate captions as they appear with Chrome's built-in translator. Show the original, the
+                translation, or both, side by side.
+              </p>
+            </article>
+            <article class="card">
+              <h3>Style it yourself</h3>
+              <p>
+                Position, font size, number of lines, background opacity, and interim text are all adjustable from
+                the popup or the caption bar itself.
+              </p>
+            </article>
+            <article class="card">
+              <h3>Works offline</h3>
+              <p>
+                Models download once (roughly 44 MB to 1.5 GB) and are cached for offline use. After that,
+                captions need no network at all.
+              </p>
+            </article>
+          </div>
+          <figure class="wide-shot">
+            <img
+              src="assets/02-popup-controls.png"
+              alt="The Brevier popup with controls for engine, spoken language, translation, and caption appearance"
+              width="1280"
+              height="800"
+              loading="lazy"
+            />
+          </figure>
+        </div>
+      </section>
+
+      <section class="section" id="translation">
+        <div class="container split">
+          <figure>
+            <img
+              src="assets/03-on-device-translation.png"
+              alt="Brevier showing original captions and their on-device translation at the same time"
+              width="1280"
+              height="800"
+              loading="lazy"
+            />
+          </figure>
+          <div>
+            <h2>Translate captions on-device</h2>
+            <p>
+              Read along in another language without sending a single word anywhere. Chrome's built-in translator
+              runs on your CPU — no GPU required — and Brevier can show the original, the translation, or both.
+            </p>
+            <ul class="check-list">
+              <li>Free with Chrome's built-in translator (Chrome 138+)</li>
+              <li>Instant, CPU-only, and works on slower machines</li>
+              <li>Pro adds Hunyuan-MT, a higher-quality on-device translator, where its license applies — it is not available in the EU, UK, or South Korea</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section alt" id="engines">
+        <div class="container">
+          <h2>Three on-device engines. 99 languages.</h2>
+          <p class="section-lead">
+            Auto picks the right engine for your machine and falls back automatically if one cannot load.
+            Everything runs inside Chrome — models are downloaded once and cached for offline use.
+          </p>
+          <div class="engine-grid">
+            <article class="card engine">
+              <span class="chip solid">English · GPU</span>
+              <h3>Parakeet</h3>
+              <p>
+                Fastest English. Live text in tens of milliseconds, with the final line the moment a sentence
+                ends.
+              </p>
+              <div class="chip-row">
+                <span class="chip">English</span>
+                <span class="chip">≈640 MB once</span>
+                <span class="chip">WebGPU</span>
+                <span class="chip">Live text</span>
+              </div>
+            </article>
+            <article class="card engine">
+              <span class="chip solid">6 languages · CPU or GPU</span>
+              <h3>Moonshine</h3>
+              <p>
+                Runs on your CPU and uses the GPU when there is one. English, Spanish, Arabic, Japanese, Mandarin
+                Chinese, and Vietnamese. 44–305 MB models.
+              </p>
+              <div class="chip-row">
+                <span class="chip">English</span>
+                <span class="chip">Spanish</span>
+                <span class="chip">Arabic</span>
+                <span class="chip">Japanese</span>
+                <span class="chip">Mandarin</span>
+                <span class="chip">Vietnamese</span>
+              </div>
+            </article>
+            <article class="card engine">
+              <span class="chip solid">99 languages · GPU</span>
+              <h3>Whisper</h3>
+              <p>
+                Most accurate. Whisper large-v3-turbo's full language table, from Afrikaans to Yoruba, in one
+                ≈1.5 GB download.
+              </p>
+              <div class="chip-row">
+                <span class="chip">French</span>
+                <span class="chip">German</span>
+                <span class="chip">Hindi</span>
+                <span class="chip">Korean</span>
+                <span class="chip">Portuguese</span>
+                <span class="chip">Russian</span>
+                <span class="chip">Ukrainian</span>
+                <span class="chip">+ 92 more</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="pricing">
+        <div class="container">
+          <h2>Free or Pro</h2>
+          <p class="section-lead">
+            Everything runs on your device either way. Pro unlocks the rest of the language table and the
+            higher-quality on-device translator.
+          </p>
+          <div class="pricing">
+            <article class="price-card">
+              <h3>Free</h3>
+              <p class="price">$0 <span>forever</span></p>
+              <p class="price-note">No account required</p>
+              <ul>
+                <li>English captions on every engine</li>
+                <li>Caption translation with Chrome's built-in translator</li>
+                <li>Every caption appearance setting</li>
+                <li>15 free Pro minutes every day, resetting at midnight</li>
+              </ul>
+              <a class="btn btn-secondary" href="https://github.com/KonstBet/brevier-site" data-store-link>Add to Chrome</a>
+            </article>
+            <article class="price-card featured">
+              <h3>Pro</h3>
+              <p class="price">$9.99 <span>per year</span></p>
+              <p class="price-note">Or $19.99 once — both unlock everything</p>
+              <ul>
+                <li>Everything in Free</li>
+                <li>The other 98 transcription languages</li>
+                <li>Hunyuan-MT on-device translation, where its license applies</li>
+              </ul>
+              <a class="btn btn-primary" href="https://github.com/KonstBet/brevier-site" data-store-link>Get Pro</a>
+            </article>
+          </div>
+          <p class="section-footnote">Prices in USD. Checkout is handled by ExtensionPay; your Pro license unlocks in the browser.</p>
+        </div>
+      </section>
+
+      <section class="section alt" id="privacy">
+        <div class="container">
+          <h2>Private by design</h2>
+          <ul class="check-list">
+            <li>Audio is captured only from the tab you start captions on, and only while captions are running.</li>
+            <li>Speech, captions, and translations are processed in Chrome, on your machine — nothing is transmitted.</li>
+            <li>The overlay only draws the caption bar; it never reads page content.</li>
+            <li>No accounts, no analytics, no tracking, and no advertising.</li>
+          </ul>
+          <p class="section-more"><a href="privacy.html">Read the privacy policy →</a></p>
+        </div>
+      </section>
+
+      <section class="section" id="faq">
+        <div class="container faq">
+          <h2>Frequently asked questions</h2>
+
+          <details>
+            <summary>Is my audio uploaded anywhere?</summary>
+            <p>
+              No. Audio is captured only from the tab you start captions on, processed in memory by the on-device
+              speech engine, and discarded. Nothing is recorded or transmitted.
+            </p>
+          </details>
+
+          <details>
+            <summary>What do I need to run Brevier?</summary>
+            <p>
+              Desktop Chrome 116 or newer. Chrome's built-in translator (for caption translation) needs Chrome
+              138 or newer. A GPU with WebGPU is recommended for Parakeet and Whisper; Moonshine runs on CPU-only
+              machines.
+            </p>
+          </details>
+
+          <details>
+            <summary>Does Brevier work offline?</summary>
+            <p>
+              After the first model download, yes. Models are cached locally and reused — roughly 44 MB to 1.5 GB
+              depending on the engine and model.
+            </p>
+          </details>
+
+          <details>
+            <summary>Which languages are supported?</summary>
+            <p>
+              English captions are free on every engine. Pro unlocks the other 98 transcription languages on the
+              Moonshine and Whisper engines. Caption translation with Chrome's built-in translator is free.
+            </p>
+          </details>
+
+          <details>
+            <summary>Does it caption fullscreen video?</summary>
+            <p>
+              Yes. The caption bar stays above fullscreen players, and it is click-through except for its drag
+              handle, so it never blocks buttons or links.
+            </p>
+          </details>
+
+          <details>
+            <summary>Can it caption Chrome's own pages?</summary>
+            <p>
+              No. Chrome does not allow extensions to capture chrome:// pages, the Chrome Web Store, or other
+              extension pages. Any normal website that plays audio works.
+            </p>
+          </details>
+
+          <details>
+            <summary>How does the free tier work?</summary>
+            <p>
+              English captions and Chrome translation are free forever, with no account. You also get 15 free Pro
+              minutes every day, resetting at midnight, to try any language.
+            </p>
+          </details>
+
+          <details>
+            <summary>How do I buy Pro?</summary>
+            <p>
+              In the Brevier popup: $9.99 per year or a $19.99 one-time purchase — both unlock everything.
+              Checkout is handled by ExtensionPay; your license is stored in your browser.
+            </p>
+          </details>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a class="brand" href="index.html">
+              <img src="assets/icon128.png" alt="" width="28" height="28" />
+              Brevier
+            </a>
+            <p>Private, on-device live captions and translation for any Chrome tab.</p>
+          </div>
+          <nav aria-label="Product links">
+            <h2 class="footer-heading">Product</h2>
+            <ul>
+              <li><a href="index.html#features">Features</a></li>
+              <li><a href="index.html#engines">Engines</a></li>
+              <li><a href="index.html#pricing">Pricing</a></li>
+              <li><a href="index.html#faq">FAQ</a></li>
+            </ul>
+          </nav>
+          <nav aria-label="Help and legal links">
+            <h2 class="footer-heading">Help &amp; legal</h2>
+            <ul>
+              <li><a href="support.html">Support</a></li>
+              <li><a href="privacy.html">Privacy policy</a></li>
+              <li><a href="licenses.html">Model licenses</a></li>
+              <li>
+                <a href="https://github.com/KonstBet/brevier-site" target="_blank" rel="noopener">GitHub</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="footer-legal">
+          <p>
+            © 2026 Brevier. Chrome is a trademark of Google LLC; Brevier is not affiliated with or endorsed by
+            Google.
+          </p>
+          <p>
+            <a href="https://github.com/KonstBet/brevier-site/issues" target="_blank" rel="noopener">Report an issue</a>
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

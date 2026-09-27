@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Support and troubleshooting — Brevier</title>
+    <meta
+      name="description"
+      content="Help for Brevier, the on-device live captions extension for Chrome: troubleshooting steps, requirements, and where to report bugs."
+    />
+    <link rel="canonical" href="https://konstbet.github.io/brevier-site/support.html" />
+    <meta name="theme-color" content="#0b1220" />
+    <meta name="robots" content="index, follow" />
+    <link rel="icon" href="assets/icon48.png" type="image/png" />
+    <link rel="apple-touch-icon" href="assets/icon128.png" />
+    <link rel="stylesheet" href="styles.css" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Brevier" />
+    <meta property="og:title" content="Support and troubleshooting — Brevier" />
+    <meta
+      property="og:description"
+      content="Troubleshooting steps, requirements, and where to report bugs for Brevier."
+    />
+    <meta property="og:url" content="https://konstbet.github.io/brevier-site/support.html" />
+    <script src="site.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="index.html">
+          <img src="assets/icon128.png" alt="" width="30" height="30" />
+          Brevier
+        </a>
+        <nav class="site-nav" aria-label="Main navigation">
+          <a href="index.html#features">Features</a>
+          <a href="index.html#engines">Engines</a>
+          <a href="index.html#pricing">Pricing</a>
+          <a href="index.html#faq">FAQ</a>
+          <a href="support.html">Support</a>
+        </nav>
+        <a class="btn btn-primary header-cta" href="https://github.com/KonstBet/brevier-site" data-store-link>Add to Chrome</a>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class="container">
+        <div class="page-header">
+          <h1>Support</h1>
+          <p class="section-lead">
+            Something not working, or a question the <a href="index.html#faq">FAQ</a> did not answer? Here is how to
+            get help fast.
+          </p>
+        </div>
+
+        <div class="prose">
+          <h2>Report a bug or ask a question</h2>
+          <p>
+            The fastest way to reach the developer is GitHub Issues. Please include as much of the following as you
+            can — it makes problems much faster to reproduce:
+          </p>
+          <ul>
+            <li>Your Chrome version (open <code>chrome://version</code>).</li>
+            <li>The selected engine (Auto, Parakeet, Moonshine, or Whisper) and language.</li>
+            <li>The site you were captioning, if the problem is specific to one.</li>
+            <li>What you expected to happen and what actually happened.</li>
+          </ul>
+          <p>
+            <a
+              class="btn btn-primary"
+              href="https://github.com/KonstBet/brevier-site/issues"
+              target="_blank"
+              rel="noopener"
+              >Open an issue on GitHub</a
+            >
+          </p>
+
+          <h2>Captions are not appearing</h2>
+          <ol>
+            <li>
+              <strong>Check that the tab can be captured.</strong> Chrome does not allow extensions to capture
+              <code>chrome://</code> pages, the Chrome Web Store, or other extension pages. Try a normal website
+              that is playing audio.
+            </li>
+            <li>
+              <strong>Give the first run a moment.</strong> The first time you use an engine, Brevier downloads the
+              model (roughly 44 MB to 1.5 GB). Watch the progress in the popup and keep the network connected until
+              it finishes.
+            </li>
+            <li>
+              <strong>Try Auto or another engine.</strong> In the popup, set Engine to Auto, or pick a different
+              engine. Auto falls back automatically if one cannot load, for example when WebGPU is unavailable.
+            </li>
+            <li>
+              <strong>Reload the tab and start again.</strong> Stop captions, reload the page, and press Start.
+            </li>
+            <li>
+              <strong>Check the spoken language.</strong> A mismatch between the spoken language setting and the
+              audio produces empty or garbled captions.
+            </li>
+          </ol>
+
+          <h2>Translation is not available</h2>
+          <ul>
+            <li>Chrome's built-in translator needs desktop Chrome 138 or newer.</li>
+            <li>Chrome may need to download a small language pack for the language pair on first use.</li>
+            <li>
+              Hunyuan-MT translation is part of Pro and is not available in the EU, UK, or South Korea, where
+              Brevier uses Chrome translation instead.
+            </li>
+          </ul>
+
+          <h2>Pro license</h2>
+          <ul>
+            <li>After checkout, return to the popup and use “Already paid? Sign in” if Pro does not unlock immediately.</li>
+            <li>License checks need a network connection; offline, Brevier keeps the last known license state.</li>
+            <li>For purchase or receipt problems, open an issue and mention the email used at checkout.</li>
+          </ul>
+
+          <h2>Requirements recap</h2>
+          <ul>
+            <li>Desktop Chrome 116 or newer (138+ for Chrome translation).</li>
+            <li>A GPU with WebGPU is recommended for Parakeet and Whisper; Moonshine runs on CPU-only machines.</li>
+            <li>One model download per engine; afterwards, captions work offline.</li>
+          </ul>
+
+          <h2>Model licenses</h2>
+          <p>
+            License notices for the on-device models and libraries are on the
+            <a href="licenses.html">licenses page</a>.
+          </p>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a class="brand" href="index.html">
+              <img src="assets/icon128.png" alt="" width="28" height="28" />
+              Brevier
+            </a>
+            <p>Private, on-device live captions and translation for any Chrome tab.</p>
+          </div>
+          <nav aria-label="Product links">
+            <h2 class="footer-heading">Product</h2>
+            <ul>
+              <li><a href="index.html#features">Features</a></li>
+              <li><a href="index.html#engines">Engines</a></li>
+              <li><a href="index.html#pricing">Pricing</a></li>
+              <li><a href="index.html#faq">FAQ</a></li>
+            </ul>
+          </nav>
+          <nav aria-label="Help and legal links">
+            <h2 class="footer-heading">Help &amp; legal</h2>
+            <ul>
+              <li><a href="support.html">Support</a></li>
+              <li><a href="privacy.html">Privacy policy</a></li>
+              <li><a href="licenses.html">Model licenses</a></li>
+              <li>
+                <a href="https://github.com/KonstBet/brevier-site" target="_blank" rel="noopener">GitHub</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="footer-legal">
+          <p>
+            © 2026 Brevier. Chrome is a trademark of Google LLC; Brevier is not affiliated with or endorsed by
+            Google.
+          </p>
+          <p>
+            <a href="https://github.com/KonstBet/brevier-site/issues" target="_blank" rel="noopener">Report an issue</a>
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
