@@ -2,14 +2,16 @@
  * Brevier website behaviour.
  *
  * Chrome Web Store links: every install CTA carries data-store-link and the Pro
- * buttons carry data-store-pro. Once the store listing is live, paste its URL
- * below — the review banner ([data-preview-only]) hides and the buttons regain
- * their labels from the HTML.
+ * buttons carry data-store-pro, both resolved to STORE_URL when it is set. The
+ * store-only banners ([data-store-only]) show and the preview banners
+ * ([data-preview-only]) hide while it is.
  *
- * Until then, those buttons point at the developer preview install page.
+ * If STORE_URL is ever cleared, those buttons fall back to the developer
+ * preview install page and the preview banners return.
  */
 (() => {
-  const STORE_URL = '';
+  const STORE_URL =
+    'https://chromewebstore.google.com/detail/brevier-%E2%80%94-private-live-ca/jfljjchlfbijcnbkagkiolngfebljapa';
 
   const PREVIEW_URL = 'install-dev.html';
 

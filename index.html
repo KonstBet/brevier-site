@@ -39,6 +39,7 @@
         "@type": "SoftwareApplication",
         "name": "Brevier",
         "url": "https://konstbet.github.io/brevier-site/",
+        "installUrl": "https://chromewebstore.google.com/detail/brevier-%E2%80%94-private-live-ca/jfljjchlfbijcnbkagkiolngfebljapa",
         "applicationCategory": "BrowserApplication",
         "operatingSystem": "Windows, macOS, Linux, ChromeOS",
         "description": "On-device live captions and translation for any Chrome tab. Speech recognition runs locally with WebAssembly and WebGPU; audio never leaves the machine.",
@@ -84,7 +85,7 @@
             "name": "How can I install Brevier today?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Brevier is in review on the Chrome Web Store. Until it is approved, you can install the developer preview: download the zip, extract it, and load it from chrome://extensions in Developer mode. Preview builds do not update automatically, and Pro purchases become available only after the store release."
+              "text": "Open the Brevier listing on the Chrome Web Store and click Add to Chrome — the store build updates automatically. If you prefer testing builds, the developer preview is still available: download the zip, extract it, and load it from chrome://extensions in Developer mode. Preview builds do not update automatically and cannot complete Pro purchases."
             }
           },
           {
@@ -132,7 +133,7 @@
             "name": "How do I buy Pro?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "In the Brevier popup: $9.99 per year or a $19.99 one-time purchase — both unlock everything. Checkout is handled by ExtensionPay and opens when Brevier is approved on the Chrome Web Store; your license is stored in your browser."
+              "text": "In the Brevier popup: $9.99 per year or a $19.99 one-time purchase — both unlock everything. Checkout is handled by ExtensionPay from the popup; your license is stored in your browser."
             }
           },
           {
@@ -151,13 +152,13 @@
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
 
-    <div class="banner" data-preview-only>
+    <div class="banner" data-store-only hidden>
       <div class="container banner-inner">
         <span>
-          <strong>Brevier is in review on the Chrome Web Store.</strong> Meanwhile, the developer
-          preview is ready to install.
+          <strong>Brevier is live on the Chrome Web Store.</strong> Install it with one click and get
+          automatic updates.
         </span>
-        <a href="install-dev.html">Install the preview →</a>
+        <a href="install-dev.html" data-store-link>Add to Chrome →</a>
       </div>
     </div>
 
@@ -221,8 +222,8 @@
             <li>
               <h3>Install Brevier</h3>
               <p>
-                Add the extension from the Chrome Web Store — or install the
-                <a href="install-dev.html">developer preview</a> while the store review is pending.
+                Add the extension from the <a href="install-dev.html" data-store-link>Chrome Web Store</a> — or
+                install the <a href="install-dev.html">developer preview</a> if you want to test builds.
               </p>
             </li>
             <li>
@@ -463,10 +464,11 @@
           <details>
             <summary>How can I install Brevier today?</summary>
             <p>
-              Brevier is in review on the Chrome Web Store. Until it is approved, you can install the
-              <a href="install-dev.html">developer preview</a>: download the zip, extract it, and load it from
-              chrome://extensions in Developer mode. Preview builds do not update automatically, and Pro
-              purchases become available only after the store release.
+              Open the Brevier listing on the <a href="install-dev.html" data-store-link>Chrome Web Store</a> and
+              click Add to Chrome — the store build updates automatically. If you prefer testing builds, the
+              <a href="install-dev.html">developer preview</a> is still available: download the zip, extract it,
+              and load it from chrome://extensions in Developer mode. Preview builds do not update automatically
+              and cannot complete Pro purchases.
             </p>
           </details>
 
@@ -514,8 +516,7 @@
             <summary>How do I buy Pro?</summary>
             <p>
               In the Brevier popup: $9.99 per year or a $19.99 one-time purchase — both unlock everything.
-              Checkout is handled by ExtensionPay and opens when Brevier is approved on the Chrome Web Store;
-              your license is stored in your browser.
+              Checkout is handled by ExtensionPay from the popup; your license is stored in your browser.
             </p>
           </details>
 

@@ -199,7 +199,7 @@ ol {
   margin-left: 4px;
 }
 
-/* Review banner (hidden by site.js once the store listing is live) */
+/* Announcement banner (shown by site.js while the store listing is set) */
 
 .banner {
   background: rgba(14, 165, 233, 0.1);
