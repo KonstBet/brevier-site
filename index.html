@@ -44,7 +44,7 @@
         "operatingSystem": "Windows, macOS, Linux, ChromeOS",
         "description": "On-device live captions and translation for any Chrome tab. Speech recognition runs locally with WebAssembly and WebGPU; audio never leaves the machine.",
         "screenshot": "https://konstbet.github.io/brevier-site/assets/01-live-captions-any-tab.png",
-        "softwareVersion": "0.1.0",
+        "softwareVersion": "0.2.0",
         "offers": [
           { "@type": "Offer", "name": "Free", "price": "0", "priceCurrency": "USD" },
           { "@type": "Offer", "name": "Pro (yearly)", "price": "9.99", "priceCurrency": "USD" },
@@ -77,7 +77,7 @@
             "name": "What do I need to run Brevier?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Desktop Chrome 116 or newer. Chrome's built-in translator (for caption translation) needs Chrome 138 or newer. A GPU with WebGPU is recommended for Parakeet and Whisper; Moonshine runs on CPU-only machines."
+              "text": "Desktop Chrome 116 or newer. Chrome's built-in translator (for caption translation) needs Chrome 138 or newer. A GPU with WebGPU is required for Parakeet, Parakeet TDT and Whisper; Moonshine runs on CPU-only machines."
             }
           },
           {
@@ -101,7 +101,7 @@
             "name": "Which languages are supported?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "English captions are free on every engine. Pro unlocks the other 98 transcription languages on the Moonshine and Whisper engines. Caption translation with Chrome's built-in translator is free."
+              "text": "English captions are free on every engine. Pro unlocks the other 98 transcription languages on the on-device engines. Caption translation with Chrome's built-in translator is free."
             }
           },
           {
@@ -370,7 +370,7 @@
               <h3>Whisper</h3>
               <p>
                 Most accurate. Whisper large-v3-turbo's full language table, from Afrikaans to Yoruba, in one
-                ≈1.5 GB download.
+                ≈1.5 GB download. Japanese uses the Kotoba-Whisper fine-tune (≈530 MB).
               </p>
               <div class="chip-row">
                 <span class="chip">French</span>
@@ -456,8 +456,8 @@
             <summary>What do I need to run Brevier?</summary>
             <p>
               Desktop Chrome 116 or newer. Chrome's built-in translator (for caption translation) needs Chrome
-              138 or newer. A GPU with WebGPU is recommended for Parakeet and Whisper; Moonshine runs on CPU-only
-              machines.
+              138 or newer. A GPU with WebGPU is required for Parakeet, Parakeet TDT, Kotoba and Whisper; Moonshine runs on
+              CPU-only machines.
             </p>
           </details>
 
@@ -483,8 +483,7 @@
           <details>
             <summary>Which languages are supported?</summary>
             <p>
-              English captions are free on every engine. Pro unlocks the other 98 transcription languages on the
-              Moonshine and Whisper engines. Caption translation with Chrome's built-in translator is free.
+              English captions are free on every engine. Pro unlocks the other 98 transcription languages on the on-device engines. Caption translation with Chrome's built-in translator is free.
             </p>
           </details>
 
