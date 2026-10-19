@@ -1,9 +1,9 @@
 /*
  * Brevier website behaviour.
  *
- * Chrome Web Store links: every install CTA carries data-store-link and the Pro
- * buttons carry data-store-pro, both resolved to STORE_URL when it is set. The
- * store-only banners ([data-store-only]) show and the preview banners
+ * Chrome Web Store links: every install CTA carries data-store-link and the
+ * Supporter buttons carry data-store-pro, both resolved to STORE_URL when it is
+ * set. The store-only banners ([data-store-only]) show and the preview banners
  * ([data-preview-only]) hide while it is.
  *
  * If STORE_URL is ever cleared, those buttons fall back to the developer
@@ -36,7 +36,7 @@
     if (STORE_URL) {
       linkTo(link, STORE_URL, true);
     } else {
-      link.textContent = 'Pro available at launch';
+      link.textContent = 'Support Brevier';
       linkTo(link, `${PREVIEW_URL}#pro`, false);
     }
   }
