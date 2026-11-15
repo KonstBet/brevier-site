@@ -44,11 +44,12 @@
         "operatingSystem": "Windows, macOS, Linux, ChromeOS",
         "description": "On-device live captions and translation for any Chrome tab. Speech recognition runs locally with WebAssembly and WebGPU; audio never leaves the machine.",
         "screenshot": "https://konstbet.github.io/brevier-site/assets/01-live-captions-any-tab.png",
-        "softwareVersion": "0.4.1",
+        "softwareVersion": "0.4.2",
         "offers": [
           { "@type": "Offer", "name": "Free", "price": "0", "priceCurrency": "USD" },
-          { "@type": "Offer", "name": "Supporter (one-time)", "price": "5", "priceCurrency": "USD" },
-          { "@type": "Offer", "name": "Supporter (yearly)", "price": "19.99", "priceCurrency": "USD" }
+          { "@type": "Offer", "name": "Tip (one-time)", "price": "5", "priceCurrency": "USD" },
+          { "@type": "Offer", "name": "Supporter (one-time)", "price": "15", "priceCurrency": "USD" },
+          { "@type": "Offer", "name": "Patron (yearly)", "price": "19.99", "priceCurrency": "USD" }
         ],
         "featureList": [
           "On-device live captions for any Chrome tab",
@@ -133,7 +134,7 @@
             "name": "How is Brevier funded?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Brevier is funded by supporters instead of feature locks. An optional Supporter pass — $5 once or $19.99 per year — is available in the popup and funds development of the on-device engines; it adds a thank-you badge and nothing else."
+              "text": "Brevier is funded by supporters instead of feature locks. Everything is free for everyone. An optional Supporter pass — $5 or $15 once, or $19.99 per year — funds development of the on-device engines and adds a thank-you badge; the yearly pass is what keeps the work funded."
             }
           },
           {
@@ -438,13 +439,13 @@
               <a class="btn btn-primary" href="install-dev.html" data-store-link>Add to Chrome</a>
             </article>
             <article class="price-card">
-              <h3>Supporter</h3>
+              <h3>Patron</h3>
               <p class="price">$19.99 <span>per year</span></p>
-              <p class="price-note">Or $5 once — both are just support</p>
+              <p class="price-note">Or $5 / $15 once if you just want to say thanks</p>
               <ul>
                 <li>Funds development of the on-device engines</li>
-                <li>A thank-you badge in the popup</li>
-                <li>That's it — nothing is locked either way</li>
+                <li>A thank-you badge in the popup, with your Supporter date</li>
+                <li>No feature is ever locked — for anyone</li>
               </ul>
               <a class="btn btn-secondary" href="install-dev.html#pro" data-store-pro>Support Brevier</a>
               <p class="price-note price-support">
@@ -452,7 +453,7 @@
               </p>
             </article>
           </div>
-          <p class="section-footnote">Prices in USD. Checkout is handled by ExtensionPay; a Supporter pass adds a thank-you badge — every feature is already free.</p>
+          <p class="section-footnote">Prices in USD. Checkout is handled by ExtensionPay. Everything is already free: a Supporter pass is a way to fund the work rather than to unlock it.</p>
         </div>
       </section>
 
@@ -545,9 +546,10 @@
           <details>
             <summary>How is Brevier funded?</summary>
             <p>
-              Brevier is funded by supporters instead of feature locks. An optional Supporter pass — $5 once or
-              $19.99 per year — is available in the popup and funds development of the on-device engines; it adds
-              a thank-you badge and nothing else. Checkout is handled by ExtensionPay.
+              Brevier is funded by supporters instead of feature locks. Everything is free for everyone; an
+              optional Supporter pass — $5 or $15 once, or $19.99 per year — funds development of the on-device
+              engines and adds a thank-you badge. The yearly pass is for people who want to keep the work funded.
+              Checkout is handled by ExtensionPay.
             </p>
           </details>
 
