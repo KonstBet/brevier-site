@@ -6,7 +6,7 @@
     <title>Model licenses and notices — Brevier</title>
     <meta
       name="description"
-      content="Licenses and notices for the on-device models and libraries bundled with Brevier: Whisper, Kotoba-Whisper, Moonshine, Parakeet, Parakeet TDT, parakeet.js, Hy-MT2, Transformers.js, ONNX Runtime, and ExtPay."
+      content="Licenses and notices for the on-device models and libraries bundled with Brevier: Qwen3-ASR, Parakeet, Parakeet TDT, parakeet.js, Hy-MT2, Transformers.js, ONNX Runtime, and ExtPay."
     />
     <link rel="canonical" href="https://konstbet.github.io/brevier-site/licenses.html" />
     <meta name="theme-color" content="#0b1220" />
@@ -55,36 +55,67 @@
         </div>
 
         <div class="prose">
-          <h2>Whisper large-v3-turbo (transcription)</h2>
+          <h2>Qwen3-ASR 0.6B / 1.7B (transcription)</h2>
           <p>
-            Licensed under the MIT License. Copyright © OpenAI. Model export by
-            <code>onnx-community/whisper-large-v3-turbo</code>.
+            Licensed under the
+            <a href="https://www.apache.org/licenses/LICENSE-2.0" target="_blank" rel="noopener"
+              >Apache License, Version 2.0</a
+            >, Copyright © Alibaba Cloud. Models by
+            <a href="https://huggingface.co/Qwen/Qwen3-ASR-0.6B" target="_blank" rel="noopener"
+              ><code>Qwen/Qwen3-ASR-0.6B</code></a
+            >
+            and
+            <a href="https://huggingface.co/Qwen/Qwen3-ASR-1.7B" target="_blank" rel="noopener"
+              ><code>Qwen/Qwen3-ASR-1.7B</code></a
+            >; ONNX exports by
+            <a
+              href="https://huggingface.co/jiangzhuo9357/Qwen3-ASR-0.6B-ONNX"
+              target="_blank"
+              rel="noopener"
+              ><code>jiangzhuo9357/Qwen3-ASR-0.6B-ONNX</code></a
+            >
+            and
+            <a
+              href="https://huggingface.co/jiangzhuo9357/Qwen3-ASR-1.7B-ONNX"
+              target="_blank"
+              rel="noopener"
+              ><code>jiangzhuo9357/Qwen3-ASR-1.7B-ONNX</code></a
+            >.
           </p>
 
-          <h2>Kotoba-Whisper v2.2 (transcription)</h2>
+          <h2>NVIDIA Parakeet TDT-CTC 0.6B Japanese (transcription)</h2>
           <p>
-            Licensed under the Apache License 2.0. Copyright © Kotoba Technologies, fine-tuned on the
-            ReazonSpeech corpus (Reazon Human Interaction Lab). Model export by
-            <code>onnx-community/kotoba-whisper-v2.2-ONNX</code>.
-          </p>
-
-          <h2>Moonshine (transcription)</h2>
-          <p>
-            Licensed under the MIT License. Copyright © Useful Sensors / Moonshine AI. Korean and Ukrainian
-            "Community"-licensed models are intentionally not included in this product.
-          </p>
-
-          <h2>NVIDIA Parakeet CTC 0.6B (transcription)</h2>
-          <p>
-            Licensed under the Creative Commons Attribution 4.0 International License (CC BY 4.0). Copyright ©
-            NVIDIA. ONNX export by <code>onnx-community/parakeet-ctc-0.6b-ONNX</code>.
+            Licensed under the
+            <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener"
+              >Creative Commons Attribution 4.0 International License (CC BY 4.0)</a
+            >. Copyright © NVIDIA. Japanese
+            <a href="https://huggingface.co/nvidia/parakeet-tdt_ctc-0.6b-ja" target="_blank" rel="noopener"
+              ><code>parakeet-tdt_ctc-0.6b-ja</code></a
+            >
+            fine-tuned on ReazonSpeech; CTC ONNX export by
+            <a href="https://huggingface.co/mokemoko/parakeet-ctc-0.6b-ja-ONNX" target="_blank" rel="noopener"
+              ><code>mokemoko/parakeet-ctc-0.6b-ja-ONNX</code></a
+            >.
           </p>
 
           <h2>Moondream Parakeet Ultra 0.6B TDT (transcription)</h2>
           <p>
-            Licensed under the Creative Commons Attribution 4.0 International License (CC BY 4.0). Copyright ©
-            NVIDIA and Moondream. NVIDIA's <code>parakeet-tdt-0.6b-v3</code> post-trained by Moondream; ONNX
-            export by <code>Olicorne/parakeet-tdt-0.6b-v3-ultra-onnx</code>.
+            Licensed under the
+            <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener"
+              >Creative Commons Attribution 4.0 International License (CC BY 4.0)</a
+            >. Copyright © NVIDIA and Moondream. NVIDIA's
+            <a href="https://huggingface.co/nvidia/parakeet-tdt-0.6b-v3" target="_blank" rel="noopener"
+              ><code>parakeet-tdt-0.6b-v3</code></a
+            >
+            post-trained by
+            <a href="https://huggingface.co/moondream/parakeet-ultra" target="_blank" rel="noopener">Moondream</a>;
+            ONNX export by
+            <a
+              href="https://huggingface.co/Olicorne/parakeet-tdt-0.6b-v3-ultra-onnx"
+              target="_blank"
+              rel="noopener"
+              ><code>Olicorne/parakeet-tdt-0.6b-v3-ultra-onnx</code></a
+            >.
           </p>
 
           <h2>parakeet.js (transcription runtime)</h2>
@@ -93,8 +124,14 @@
           <h2>Tencent Hy-MT2-1.8B (translation, optional)</h2>
           <p>
             Hy-MT2 is licensed under the Apache License, Version 2.0, Copyright © 2026 Tencent. The browser build
-            is an int4 ONNX conversion of <code>tencent/Hy-MT2-1.8B</code>. This product is not affiliated with,
-            associated with, sponsored, or endorsed by Tencent, and Tencent does not endorse this product.
+            is an int4 ONNX conversion of
+            <a href="https://huggingface.co/tencent/Hy-MT2-1.8B" target="_blank" rel="noopener"
+              ><code>tencent/Hy-MT2-1.8B</code></a
+            >, published as
+            <a href="https://huggingface.co/konstbet/Hy-MT2-1.8B-ONNX" target="_blank" rel="noopener"
+              ><code>konstbet/Hy-MT2-1.8B-ONNX</code></a
+            >. This product is not affiliated with, associated with, sponsored, or endorsed by Tencent, and
+            Tencent does not endorse this product.
           </p>
           <p>
             Full license text:

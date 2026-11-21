@@ -6,7 +6,7 @@
     <title>Brevier — Private live captions &amp; subtitles for any tab (Chrome extension)</title>
     <meta
       name="description"
-      content="Brevier adds on-device live captions, subtitles and translation to any Chrome tab. Your audio never leaves your machine. All 99 languages are free, with bilingual captions and no account."
+      content="Brevier adds on-device live captions, subtitles and translation to any Chrome tab. Your audio never leaves your machine. All 39 languages are free, with bilingual captions and no account."
     />
     <link rel="canonical" href="https://konstbet.github.io/brevier-site/" />
     <meta name="theme-color" content="#0b1220" />
@@ -19,7 +19,7 @@
     <meta property="og:title" content="Brevier — Private live captions &amp; subtitles for any tab" />
     <meta
       property="og:description"
-      content="On-device live captions and translation for any Chrome tab. Audio never leaves your machine. All 99 languages are free."
+      content="On-device live captions and translation for any Chrome tab. Audio never leaves your machine. All 39 languages are free."
     />
     <meta property="og:url" content="https://konstbet.github.io/brevier-site/" />
     <meta property="og:image" content="https://konstbet.github.io/brevier-site/assets/01-live-captions-any-tab.png" />
@@ -44,7 +44,7 @@
         "operatingSystem": "Windows, macOS, Linux, ChromeOS",
         "description": "On-device live captions and translation for any Chrome tab. Speech recognition runs locally with WebAssembly and WebGPU; audio never leaves the machine.",
         "screenshot": "https://konstbet.github.io/brevier-site/assets/01-live-captions-any-tab.png",
-        "softwareVersion": "0.5.1",
+        "softwareVersion": "0.6.0",
         "offers": [
           { "@type": "Offer", "name": "Free", "price": "0", "priceCurrency": "USD" },
           { "@type": "Offer", "name": "Tip (one-time)", "price": "5", "priceCurrency": "USD" },
@@ -53,8 +53,8 @@
         ],
         "featureList": [
           "On-device live captions for any Chrome tab",
-          "Five on-device engines: Parakeet, Parakeet TDT, Kotoba, Moonshine, and Whisper",
-          "All 99 languages free, with bilingual original + translation captions",
+          "Three on-device engines: Parakeet, Parakeet TDT, and Qwen3-ASR",
+          "All 39 languages free, with bilingual original + translation captions",
           "On-device caption translation with Chrome's built-in translator",
           "Draggable, click-through caption overlay above fullscreen video"
         ]
@@ -78,7 +78,7 @@
             "name": "What do I need to run Brevier?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Desktop Chrome 116 or newer. Chrome's built-in translator (for caption translation) needs Chrome 138 or newer. A GPU with WebGPU is required for Parakeet, Parakeet TDT, Kotoba, Whisper and Hy-MT2; Moonshine runs on CPU-only machines."
+              "text": "Desktop Chrome 116 or newer. Chrome's built-in translator (for caption translation) needs Chrome 138 or newer. Brevier uses WebGPU when available and falls back to CPU transcription; WebGPU is recommended for live speed."
             }
           },
           {
@@ -94,7 +94,7 @@
             "name": "Does Brevier work offline?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "After the first model download, yes. Models are cached locally and reused — roughly 44 MB to 1.5 GB depending on the engine and model."
+              "text": "After the first model download, yes. Models are cached locally and reused — roughly 400 MB to 2.6 GB depending on the engine and model."
             }
           },
           {
@@ -102,7 +102,7 @@
             "name": "Which languages are supported?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "All 99 languages are free — Auto picks an engine that supports the selected language — with no account and no daily limits. Bilingual captions (original + translation together) are free too."
+              "text": "All 39 languages are free — Auto picks an engine that supports the selected language — with no account and no daily limits. Bilingual captions (original + translation together) are free too."
             }
           },
           {
@@ -126,7 +126,7 @@
             "name": "Is everything really free?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Every feature is free, with no account and no daily limits: all 99 transcription languages, bilingual captions, and translation with Chrome's built-in translator or Hy-MT2."
+              "text": "Every feature is free, with no account and no daily limits: all 39 transcription languages, bilingual captions, and translation with Chrome's built-in translator or Hy-MT2."
             }
           },
           {
@@ -184,7 +184,7 @@
       <section class="hero">
         <div class="container hero-grid">
           <div>
-            <p class="eyebrow">Chrome extension · 99 languages · Runs on your device</p>
+            <p class="eyebrow">Chrome extension · 39 languages · Runs on your device</p>
             <h1>Private live captions for any tab.</h1>
             <p class="lead">
               Brevier adds real-time captions to whatever you are watching or listening to — calls, streams,
@@ -197,7 +197,7 @@
             </div>
             <p class="cta-note">Free forever · No account required · Desktop Chrome 116+</p>
             <ul class="check-list">
-              <li>All 99 languages, free forever</li>
+              <li>All 39 languages, free forever</li>
               <li>Bilingual captions: original + translation</li>
               <li>No account, no daily limits</li>
               <li>Audio never leaves your machine</li>
@@ -255,10 +255,10 @@
               </p>
             </article>
             <article class="card">
-              <h3>Five on-device engines</h3>
+              <h3>Three on-device engines</h3>
               <p>
-                Parakeet, Parakeet TDT, Kotoba, Moonshine, and Whisper all run inside Chrome with WebAssembly and
-                WebGPU. Auto picks the best engine for your machine and switches if one cannot load.
+                Parakeet, Parakeet TDT, and Qwen3-ASR all run inside Chrome with WebAssembly and WebGPU. Auto
+                picks the best engine for the language and switches if one cannot load.
               </p>
             </article>
             <article class="card">
@@ -285,7 +285,7 @@
             <article class="card">
               <h3>Works offline</h3>
               <p>
-                Models download once (roughly 44 MB to 1.5 GB) and are cached for offline use. After that,
+                Models download once (roughly 400 MB to 2.6 GB) and are cached for offline use. After that,
                 captions need no network at all.
               </p>
             </article>
@@ -331,28 +331,29 @@
 
       <section class="section alt" id="engines">
         <div class="container">
-          <h2>Five on-device engines. 99 languages.</h2>
+          <h2>Three on-device engines. 39 languages.</h2>
           <p class="section-lead">
-            Auto picks the right engine for your machine and falls back automatically if one cannot load.
-            Everything runs inside Chrome — models are downloaded once and cached for offline use.
+            Auto picks the right engine for the language and falls back automatically if one cannot load.
+            Everything runs inside Chrome — models are downloaded once and cached for offline use. All three
+            engines use WebGPU when available and fall back to CPU transcription; WebGPU is recommended for live
+            speed.
           </p>
           <div class="engine-grid">
             <article class="card engine">
-              <span class="chip solid">English · GPU</span>
+              <span class="chip solid">Japanese</span>
               <h3>Parakeet</h3>
               <p>
-                Fastest English. Live text in tens of milliseconds, with the final line the moment a sentence
+                Fastest Japanese. Live text in tens of milliseconds, with the final line the moment a sentence
                 ends.
               </p>
               <div class="chip-row">
-                <span class="chip">English</span>
-                <span class="chip">≈640 MB once</span>
-                <span class="chip">WebGPU</span>
+                <span class="chip">Japanese</span>
+                <span class="chip">≈620 MB once</span>
                 <span class="chip">Live text</span>
               </div>
             </article>
             <article class="card engine">
-              <span class="chip solid">25 languages · GPU</span>
+              <span class="chip solid">25 languages</span>
               <h3>Parakeet TDT</h3>
               <p>
                 A multilingual transducer for 25 European languages — English, German, French, Spanish, Italian,
@@ -368,50 +369,19 @@
               </div>
             </article>
             <article class="card engine">
-              <span class="chip solid">Japanese · GPU</span>
-              <h3>Kotoba</h3>
+              <span class="chip solid">30 languages</span>
+              <h3>Qwen3-ASR</h3>
               <p>
-                Japanese-specific Whisper fine-tune, tuned for Japanese speech and punctuation, at about a third
-                of Whisper's size (≈530 MB).
+                Two model sizes for Chinese, Korean, Arabic, Hindi, Turkish, and more — including the languages
+                Parakeet does not cover. 0.6B (about 1.2 GB) is faster; 1.7B (about 2.6 GB) is more accurate.
               </p>
               <div class="chip-row">
-                <span class="chip">Japanese</span>
-                <span class="chip">≈530 MB once</span>
-                <span class="chip">WebGPU</span>
-              </div>
-            </article>
-            <article class="card engine">
-              <span class="chip solid">6 languages · CPU or GPU</span>
-              <h3>Moonshine</h3>
-              <p>
-                Runs on your CPU and uses the GPU when there is one. English, Spanish, Arabic, Japanese, Mandarin
-                Chinese, and Vietnamese. 44–305 MB models.
-              </p>
-              <div class="chip-row">
-                <span class="chip">English</span>
-                <span class="chip">Spanish</span>
-                <span class="chip">Arabic</span>
-                <span class="chip">Japanese</span>
-                <span class="chip">Mandarin</span>
-                <span class="chip">Vietnamese</span>
-              </div>
-            </article>
-            <article class="card engine">
-              <span class="chip solid">99 languages · GPU</span>
-              <h3>Whisper</h3>
-              <p>
-                Most accurate. Whisper large-v3-turbo's full language table, from Afrikaans to Yoruba, in one
-                ≈1.5 GB download. Japanese uses the Kotoba-Whisper fine-tune (≈530 MB).
-              </p>
-              <div class="chip-row">
-                <span class="chip">French</span>
-                <span class="chip">German</span>
-                <span class="chip">Hindi</span>
+                <span class="chip">Chinese</span>
                 <span class="chip">Korean</span>
-                <span class="chip">Portuguese</span>
-                <span class="chip">Russian</span>
-                <span class="chip">Ukrainian</span>
-                <span class="chip">+ 92 more</span>
+                <span class="chip">Arabic</span>
+                <span class="chip">Hindi</span>
+                <span class="chip">Turkish</span>
+                <span class="chip">+ 25 more</span>
               </div>
             </article>
           </div>
@@ -422,7 +392,7 @@
         <div class="container">
           <h2>Free — funded by supporters</h2>
           <p class="section-lead">
-            Every feature runs on your device and is free for everyone: all 99 languages, bilingual captions,
+            Every feature runs on your device and is free for everyone: all 39 languages, bilingual captions,
             and both translators. Brevier is funded by optional Supporter passes, not by feature locks.
           </p>
           <div class="pricing">
@@ -431,7 +401,7 @@
               <p class="price">$0 <span>forever</span></p>
               <p class="price-note">No account, no daily limits</p>
               <ul>
-                <li>All 99 languages, free — Auto picks a compatible engine</li>
+                <li>All 39 languages, free — Auto picks a compatible engine</li>
                 <li>Bilingual captions: original + translation together</li>
                 <li>Translation with Chrome's built-in translator and Hy-MT2</li>
                 <li>Every caption appearance setting</li>
@@ -486,8 +456,8 @@
             <summary>What do I need to run Brevier?</summary>
             <p>
               Desktop Chrome 116 or newer. Chrome's built-in translator (for caption translation) needs Chrome
-              138 or newer. A GPU with WebGPU is required for Parakeet, Parakeet TDT, Kotoba, Whisper and Hy-MT2;
-              Moonshine runs on CPU-only machines.
+              138 or newer. Brevier uses WebGPU when available and falls back to CPU transcription; WebGPU is
+              recommended for live speed.
             </p>
           </details>
 
@@ -505,7 +475,7 @@
           <details>
             <summary>Does Brevier work offline?</summary>
             <p>
-              After the first model download, yes. Models are cached locally and reused — roughly 44 MB to 1.5 GB
+              After the first model download, yes. Models are cached locally and reused — roughly 400 MB to 2.6 GB
               depending on the engine and model.
             </p>
           </details>
@@ -513,7 +483,7 @@
           <details>
             <summary>Which languages are supported?</summary>
             <p>
-              All 99 languages are free — Auto picks an engine that supports the selected language — with no
+              All 39 languages are free — Auto picks an engine that supports the selected language — with no
               account and no daily limits. Bilingual captions (original + translation together) are free too.
             </p>
           </details>
@@ -537,7 +507,7 @@
           <details>
             <summary>Is everything really free?</summary>
             <p>
-              Every feature is free, with no account and no daily limits: all 99 transcription languages,
+              Every feature is free, with no account and no daily limits: all 39 transcription languages,
               bilingual captions, and translation with Chrome's built-in translator or Hy-MT2.
             </p>
           </details>

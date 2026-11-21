@@ -70,7 +70,7 @@
           </p>
           <ul>
             <li>Your Chrome version (open <code>chrome://version</code>).</li>
-            <li>The selected engine (Auto, Parakeet, Parakeet TDT, Kotoba, Moonshine, or Whisper) and language.</li>
+            <li>The selected engine (Auto, Parakeet, Parakeet TDT, or Qwen3-ASR) and language.</li>
             <li>The site you were captioning, if the problem is specific to one.</li>
             <li>What you expected to happen and what actually happened.</li>
           </ul>
@@ -93,7 +93,7 @@
             </li>
             <li>
               <strong>Give the first run a moment.</strong> The first time you use an engine, Brevier downloads the
-              model (roughly 44 MB to 1.5 GB). Watch the progress in the popup and keep the network connected until
+              model (roughly 400 MB to 2.6 GB). Watch the progress in the popup and keep the network connected until
               it finishes.
             </li>
             <li>
@@ -114,8 +114,8 @@
             <li>Chrome's built-in translator needs desktop Chrome 138 or newer.</li>
             <li>Chrome may need to download a small language pack for the language pair on first use.</li>
             <li>
-              Hy-MT2 translation needs WebGPU. On a machine without it, switch to Chrome translation in the
-              popup.
+              Hy-MT2 translation uses WebGPU. Without it, Brevier switches to Chrome translation
+              automatically.
             </li>
           </ul>
 
@@ -133,7 +133,7 @@
           <h2>Requirements recap</h2>
           <ul>
             <li>Desktop Chrome 116 or newer (138+ for Chrome translation).</li>
-            <li>A GPU with WebGPU is recommended for Parakeet, Parakeet TDT, Kotoba and Whisper; Moonshine runs on CPU-only machines.</li>
+            <li>Brevier uses WebGPU when available and falls back to CPU transcription; WebGPU is recommended for live speed.</li>
             <li>One model download per engine; afterwards, captions work offline.</li>
           </ul>
 
