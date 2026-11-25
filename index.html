@@ -55,7 +55,7 @@
           "On-device live captions for any Chrome tab",
           "Three on-device engines: Parakeet, Parakeet TDT, and Qwen3-ASR",
           "All 39 languages free, with bilingual original + translation captions",
-          "On-device caption translation with Chrome's built-in translator",
+          "On-device caption translation with Chrome's built-in translator or Hy-MT3",
           "Draggable, click-through caption overlay above fullscreen video"
         ]
       }
@@ -78,7 +78,7 @@
             "name": "What do I need to run Brevier?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Desktop Chrome 116 or newer. Chrome's built-in translator (for caption translation) needs Chrome 138 or newer. Brevier uses WebGPU when available and falls back to CPU transcription; WebGPU is recommended for live speed."
+              "text": "Desktop Chrome 116 or newer. Chrome's built-in translator needs Chrome 138 or newer. Hy-MT3 translation runs on WebGPU, with Chrome translation as the fallback; speech engines also prefer WebGPU and fall back to CPU. WebGPU is recommended for live speed."
             }
           },
           {
@@ -271,8 +271,9 @@
             <article class="card">
               <h3>On-device translation</h3>
               <p>
-                Translate captions as they appear with Chrome's built-in translator. Show the original, the
-                translation, or both together as bilingual captions — all free.
+                Translate captions as they appear with Chrome's built-in translator, or run the higher-quality
+                Hy-MT3 model on your GPU. Show the original, the translation, or both together as bilingual
+                captions — all free.
               </p>
             </article>
             <article class="card">
@@ -316,8 +317,9 @@
           <div>
             <h2>Translate captions on-device</h2>
             <p>
-              Read along in another language without sending a single word anywhere. Chrome's built-in translator
-              runs on your CPU — no GPU required — and Brevier can show the original, the translation, or both
+              Read along in another language without sending a single word anywhere. Brevier offers two on-device
+              translators: Chrome's built-in translator runs instantly on your CPU, while Hy-MT3 delivers
+              higher-quality output on your GPU. Either way you can show the original, the translation, or both
               together as bilingual captions.
             </p>
             <ul class="check-list">
@@ -455,9 +457,9 @@
           <details>
             <summary>What do I need to run Brevier?</summary>
             <p>
-              Desktop Chrome 116 or newer. Chrome's built-in translator (for caption translation) needs Chrome
-              138 or newer. Brevier uses WebGPU when available and falls back to CPU transcription; WebGPU is
-              recommended for live speed.
+              Desktop Chrome 116 or newer. Chrome's built-in translator needs Chrome 138 or newer. Hy-MT3
+              translation runs on WebGPU, with Chrome translation as the fallback; speech engines also prefer
+              WebGPU and fall back to CPU. WebGPU is recommended for live speed.
             </p>
           </details>
 
