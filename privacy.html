@@ -6,7 +6,7 @@
     <title>Privacy policy — Brevier</title>
     <meta
       name="description"
-      content="How Brevier handles your data: audio is processed on your device and never uploaded. No accounts, no analytics, no tracking."
+      content="How Brevier handles your data: audio is processed on your device and never uploaded. Free features need no account, with no analytics and no tracking."
     />
     <link rel="canonical" href="https://konstbet.github.io/brevier-site/privacy.html" />
     <meta name="theme-color" content="#0b1220" />
@@ -19,7 +19,7 @@
     <meta property="og:title" content="Privacy policy — Brevier" />
     <meta
       property="og:description"
-      content="Audio is processed on your device and never uploaded. No accounts, no analytics, no tracking."
+      content="Audio is processed on your device and never uploaded. Free features need no account, with no analytics and no tracking."
     />
     <meta property="og:url" content="https://konstbet.github.io/brevier-site/privacy.html" />
     <script src="site.js" defer></script>
@@ -35,6 +35,7 @@
         </a>
         <nav class="site-nav" aria-label="Main navigation">
           <a href="index.html#features">Features</a>
+          <a href="index.html#studio">Studio</a>
           <a href="index.html#engines">Engines</a>
           <a href="index.html#pricing">Pricing</a>
           <a href="index.html#faq">FAQ</a>
@@ -48,23 +49,24 @@
       <div class="container">
         <div class="page-header">
           <h1>Privacy policy</h1>
-          <p class="meta-line">Last updated: September 28, 2026</p>
+          <p class="meta-line">Last updated: November 26, 2026</p>
         </div>
 
         <div class="prose">
           <div class="notice">
             <p>
-              <strong>The short version:</strong> Brevier does not collect, transmit, or sell your data. Audio is
-              captured only from the tab you choose, processed on your device, and discarded. There are no
-              accounts, no analytics, and no tracking.
+              <strong>The short version:</strong> Brevier does not collect, transmit, or sell your data. Tab audio
+              is captured only while you run captions, and Studio reads only the file you choose. Everything is
+              processed on your device. Free features need no account; the optional paid pass uses ExtensionPay.
+              There are no analytics and no tracking.
             </p>
           </div>
 
           <h2>What Brevier processes on your device</h2>
           <p>
             Brevier is a Chrome extension that shows live captions for the audio of a tab you explicitly choose,
-            and can optionally translate those captions. All speech recognition and translation run locally inside
-            Chrome:
+            can optionally translate those captions, and can transcribe the audio track of a file you select in its
+            Studio page. All speech recognition and translation run locally inside Chrome:
           </p>
           <ul>
             <li>
@@ -79,6 +81,11 @@
               server.
             </li>
             <li>
+              <strong>Files in Studio.</strong> A file is read only after you choose it in File Transcription
+              Studio. Its audio track is decoded in memory, transcribed by the on-device speech engine, and then
+              released. The original file is never copied into extension storage or transmitted.
+            </li>
+            <li>
               <strong>Page content.</strong> The caption overlay does not read, collect, or transmit page content.
               It only draws the caption bar on top of the page.
             </li>
@@ -90,26 +97,35 @@
             (<code>chrome.storage.local</code>) so the extension works the way you configured it:
           </p>
           <ul>
-            <li>Your settings: engine, language, translation options, and caption appearance.</li>
+            <li>Your settings: engine, language, translation options, caption appearance, and Studio speech-model choice.</li>
             <li>The caption bar position.</li>
-            <li>Your Supporter status, if you bought a Supporter pass.</li>
+            <li>Your Studio Pro or Supporter status, if you bought a pass.</li>
+            <li>The number of free Studio transcriptions and translation passes used.</li>
+            <li>
+              Finished Studio transcripts, only when Studio Pro is active. Up to 50 recent transcripts are stored
+              in IndexedDB on this device; older ones are removed automatically. Studio Pro can delete any
+              transcript from its history. Free file transcriptions are not saved to history, and the original file
+              is not stored.
+            </li>
           </ul>
           <p>
             This data stays in your browser profile. It is never sent to Brevier's developer, and Chrome removes
             it when you uninstall the extension.
           </p>
 
-          <h2>Supporter passes</h2>
+          <h2>Studio Pro and thank-you passes</h2>
           <p>
-            Every feature is free; a Supporter pass is optional and adds a thank-you badge. Checkout and
+            Live captions are free. Studio Pro is an optional paid upgrade, and legacy one-off Supporter passes are
+            optional thank-you purchases. Checkout and
             pass management are handled by
             <a href="https://extensionpay.com" target="_blank" rel="noopener">ExtensionPay</a>, a third-party
             service for browser extension payments, which uses Stripe to process payments. When you buy a pass or
             sign in, ExtensionPay processes your purchase and stores the details needed to verify it; their
-            privacy policy and terms apply to that processing. Brevier stores only the resulting status
-            (and the account email returned by ExtensionPay) locally in your browser, and contacts ExtensionPay's
-            service over the network only to verify a purchase or open the checkout page. Brevier never receives
-            your card details.
+            privacy policy and terms apply to that processing. Brevier stores the resulting entitlement status
+            locally. ExtensionPay's library also stores the account email, extension API key, and account user
+            record it receives, using Chrome extension storage and its sync feature when available. Brevier
+            contacts ExtensionPay's service over the network only to verify a purchase or open the checkout page.
+            Brevier never receives your card details.
           </p>
 
           <h2>Permissions and why they are needed</h2>
@@ -137,8 +153,8 @@
 
           <h2>What Brevier does not do</h2>
           <ul>
-            <li>No collection or transmission of audio, captions, translations, or browsing activity.</li>
-            <li>No user accounts or sign-ins (except the optional Supporter pass).</li>
+            <li>No collection or transmission of audio, files, transcripts, captions, translations, or browsing activity.</li>
+            <li>No user accounts or sign-ins (except the optional paid pass).</li>
             <li>No analytics, telemetry, crash reporting, or advertising.</li>
             <li>No selling or sharing of data with third parties.</li>
           </ul>
@@ -171,7 +187,7 @@
               <img src="assets/icon128.png" alt="" width="28" height="28" />
               Brevier
             </a>
-            <p>Private, on-device live captions and translation for any Chrome tab.</p>
+            <p>Private, on-device live captions and translation for any Chrome tab, plus local file transcription.</p>
           </div>
           <nav aria-label="Product links">
             <h2 class="footer-heading">Product</h2>

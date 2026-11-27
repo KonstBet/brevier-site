@@ -35,6 +35,7 @@
         </a>
         <nav class="site-nav" aria-label="Main navigation">
           <a href="index.html#features">Features</a>
+          <a href="index.html#studio">Studio</a>
           <a href="index.html#engines">Engines</a>
           <a href="index.html#pricing">Pricing</a>
           <a href="index.html#faq">FAQ</a>
@@ -58,9 +59,9 @@
           <h2>Install and update Brevier</h2>
           <p>
             Install Brevier from the <a href="install-dev.html" data-store-link>Chrome Web Store</a> — store
-            builds update automatically and support Supporter checkout. If you want to test builds, the
+            builds update automatically and support Studio Pro checkout. If you want to test builds, the
             <a href="install-dev.html">developer preview</a> is still available, but it does not auto-update and
-            cannot complete Supporter purchases. Supporter passes are what fund Brevier's development.
+            cannot complete paid purchases. Live captions are free; Studio Pro and optional tips fund development.
           </p>
 
           <h2>Report a bug or ask a question</h2>
@@ -109,7 +110,18 @@
             </li>
           </ol>
 
-          <h2>Translation is not available</h2>
+          <h2>Studio file transcription</h2>
+          <ul>
+            <li>Supported files: MP3, M4A, AAC, WAV, OGG, Opus and FLAC audio, plus MP4, M4V, MOV and WebM video (the audio track is transcribed).</li>
+            <li>Studio accepts files up to 1 GB. The free plan includes two file transcriptions of up to 30 minutes each and two on-device translation passes; Studio Pro adds unlimited file transcription up to 90 minutes and unlimited transcript translation.</li>
+            <li>The two free file transcriptions and two translation passes are tracked in this browser profile; clearing the extension's data resets both counts.</li>
+            <li>Studio starts with Qwen3-ASR 1.7B in Auto, or you can pick another speech model. The first load can take a few minutes. Long files on CPU can take a long time; keep the Studio tab open while it works.</li>
+            <li>If live captions are running, stop them before starting Studio. Only one speech engine can run at a time.</li>
+            <li>If Chrome cannot decode a file, try MP3, M4A, WAV or an MP4 with AAC audio. Studio does not use a cloud fallback.</li>
+            <li>Studio Pro keeps the 50 most recent transcripts on this device; older ones are removed automatically. Transcripts can be deleted from the recent list in Studio.</li>
+          </ul>
+
+          <h2>Translation isn't working</h2>
           <ul>
             <li>Chrome's built-in translator needs desktop Chrome 138 or newer.</li>
             <li>Chrome may need to download a small language pack for the language pair on first use.</li>
@@ -119,15 +131,25 @@
             </li>
           </ul>
 
-          <h2>Supporter pass</h2>
+          <h2>Studio Pro and thank-you passes</h2>
           <ul>
-            <li>Every feature is free and nothing is locked; a Supporter pass is optional and adds a thank-you badge in the popup.</li>
+            <li>Live captions are free. Studio Pro is $4.99/month or $39/year and unlocks unlimited file transcription up to 90 minutes, transcript translation, Markdown/VTT export and local history.</li>
+            <li>Active yearly Patrons are grandfathered into Studio Pro. One-off tips ($10) and legacy Supporter passes keep their badge but do not unlock Studio Pro.</li>
             <li>
-              After checkout, return to the popup and use “Already supported? Sign in” if the badge does not
-              appear immediately.
+              After checkout, return to Brevier; Studio checks access again when the page regains focus. Use
+              “Already supported? Sign in” in the popup if the status does not appear.
             </li>
-            <li>Pass checks need a network connection; offline, Brevier keeps the last known status.</li>
-            <li>For purchase or receipt problems, open an issue and mention the email used at checkout.</li>
+            <li>Pass checks need a network connection; offline, Brevier uses the last cached status.</li>
+            <li>For purchase or receipt problems, open an issue saying only that you need purchase help. Do not post your email, receipt, or payment details; the developer will arrange private verification.</li>
+          </ul>
+
+          <h2>Purchases, renewal and refunds</h2>
+          <ul>
+            <li>Brevier is sold by the Brevier developer, not by Google. ExtensionPay and Stripe process the payment.</li>
+            <li>Studio Pro monthly and yearly plans renew automatically until cancelled. Cancel or update payment details from “Manage subscription” in the Brevier popup.</li>
+            <li>One-off tips and Supporter passes do not renew and do not unlock Studio Pro.</li>
+            <li>For a duplicate charge, accidental purchase or refund request, open a GitHub issue within 14 days without including personal or payment details, and the developer will arrange private verification. Refunds are reviewed case by case; cancelling stops future renewals but does not automatically refund a past period.</li>
+            <li>Prices are shown in USD at checkout and may include applicable taxes calculated by Stripe.</li>
           </ul>
 
           <h2>Requirements recap</h2>
@@ -154,7 +176,7 @@
               <img src="assets/icon128.png" alt="" width="28" height="28" />
               Brevier
             </a>
-            <p>Private, on-device live captions and translation for any Chrome tab.</p>
+            <p>Private, on-device live captions and translation for any Chrome tab, plus local file transcription.</p>
           </div>
           <nav aria-label="Product links">
             <h2 class="footer-heading">Product</h2>
